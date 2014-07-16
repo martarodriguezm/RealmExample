@@ -65,6 +65,25 @@
     
 }
 
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+         Post *post = [[Post allObjects] objectAtIndex:indexPath.row];
+        
+        // Get the default Realm
+        RLMRealm *realm = [RLMRealm defaultRealm];
+        
+        // Add to Realm with transaction
+        [realm beginWriteTransaction];
+        [realm deleteObject:post];
+        [realm commitWriteTransaction];
+        [tableView reloadData]; // tell table to refresh now
+    }
+}
+
 /********************************************************/
 #pragma mark - TableViewDelegate
 /********************************************************/
