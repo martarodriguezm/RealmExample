@@ -40,3 +40,7 @@ DerivedData
 .DS_Store
 
 
+#############
+### Realm ##
+#############
+Realm.framework
