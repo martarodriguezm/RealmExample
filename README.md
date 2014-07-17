@@ -1,7 +1,7 @@
 RealmExample
 ============
 
-This is a simple CRUD application for iOS app using Realm framework.
+This is a simple CRUD application for iOS app using Realm framework (http://realm.io/).
 
 ## Usage
 
