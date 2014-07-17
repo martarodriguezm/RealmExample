@@ -89,21 +89,23 @@
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-    NSLog(@"Entered: %@",[[alertView textFieldAtIndex:0] text]);
-    Comment *comment = [[Comment alloc] init];
-    comment.comment = [[alertView textFieldAtIndex:0] text];
-    comment.date = [NSDate date];
-    
-    // Get the default Realm
-    RLMRealm *realm = [RLMRealm defaultRealm];
-    
-    // Add to Realm with transaction
-    [realm beginWriteTransaction];
-    [self.post.comments addObject:comment];
-    [realm addObject:self.post];
-    [realm commitWriteTransaction];
-    
-    [self.commentsTableView reloadData];
+    if(buttonIndex == 1) {
+        NSLog(@"Entered: %@",[[alertView textFieldAtIndex:0] text]);
+        Comment *comment = [[Comment alloc] init];
+        comment.comment = [[alertView textFieldAtIndex:0] text];
+        comment.date = [NSDate date];
+        
+        // Get the default Realm
+        RLMRealm *realm = [RLMRealm defaultRealm];
+        
+        // Add to Realm with transaction
+        [realm beginWriteTransaction];
+        [self.post.comments addObject:comment];
+        [realm addObject:self.post];
+        [realm commitWriteTransaction];
+        
+        [self.commentsTableView reloadData];
+    }
 }
 
 @end
