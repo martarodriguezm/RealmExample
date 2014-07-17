@@ -7,12 +7,14 @@
 //
 
 #import <Realm/Realm.h>
+#import "Comment.h"
 
 @interface Post : RLMObject
 // Add properties here to define the model
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *text;
 @property (nonatomic, strong) NSDate *publishDate;
+@property (nonatomic, strong) RLMArray<Comment> *comments;
 
 @end
 

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		09DCF32FFE3F4E29BBD85246 /* libPods-RealmExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DF06845E89504F168F214FFC /* libPods-RealmExample.a */; };
+		C667AFF31977D615002FE149 /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = C667AFF21977D615002FE149 /* Comment.m */; };
+		C667AFF61977D748002FE149 /* PostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C667AFF51977D748002FE149 /* PostViewController.m */; };
 		C6707E851976A592003C6E5D /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = C6707E841976A592003C6E5D /* Post.m */; };
 		C6707E881976A624003C6E5D /* AddPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6707E871976A624003C6E5D /* AddPostViewController.m */; };
 		C6D6D20A19769A3B00B279D7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6D6D20919769A3B00B279D7 /* Foundation.framework */; };
@@ -38,6 +40,10 @@
 
 /* Begin PBXFileReference section */
 		5F2C4663F596480BA5C0F73D /* Pods-RealmExample.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealmExample.xcconfig"; path = "Pods/Pods-RealmExample.xcconfig"; sourceTree = "<group>"; };
+		C667AFF11977D615002FE149 /* Comment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Comment.h; path = Model/Comment.h; sourceTree = "<group>"; };
+		C667AFF21977D615002FE149 /* Comment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Comment.m; path = Model/Comment.m; sourceTree = "<group>"; };
+		C667AFF41977D748002FE149 /* PostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostViewController.h; path = Controllers/PostViewController.h; sourceTree = "<group>"; };
+		C667AFF51977D748002FE149 /* PostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostViewController.m; path = Controllers/PostViewController.m; sourceTree = "<group>"; };
 		C6707E831976A592003C6E5D /* Post.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Post.h; path = Model/Post.h; sourceTree = "<group>"; };
 		C6707E841976A592003C6E5D /* Post.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Post.m; path = Model/Post.m; sourceTree = "<group>"; };
 		C6707E861976A624003C6E5D /* AddPostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddPostViewController.h; path = Controllers/AddPostViewController.h; sourceTree = "<group>"; };
@@ -96,6 +102,8 @@
 				C6D6D21F19769A3B00B279D7 /* ViewController.m */,
 				C6707E861976A624003C6E5D /* AddPostViewController.h */,
 				C6707E871976A624003C6E5D /* AddPostViewController.m */,
+				C667AFF41977D748002FE149 /* PostViewController.h */,
+				C667AFF51977D748002FE149 /* PostViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -188,6 +196,8 @@
 			children = (
 				C6707E831976A592003C6E5D /* Post.h */,
 				C6707E841976A592003C6E5D /* Post.m */,
+				C667AFF11977D615002FE149 /* Comment.h */,
+				C667AFF21977D615002FE149 /* Comment.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -324,7 +334,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C667AFF61977D748002FE149 /* PostViewController.m in Sources */,
 				C6D6D22019769A3B00B279D7 /* ViewController.m in Sources */,
+				C667AFF31977D615002FE149 /* Comment.m in Sources */,
 				C6D6D21A19769A3B00B279D7 /* AppDelegate.m in Sources */,
 				C6D6D21619769A3B00B279D7 /* main.m in Sources */,
 				C6707E851976A592003C6E5D /* Post.m in Sources */,

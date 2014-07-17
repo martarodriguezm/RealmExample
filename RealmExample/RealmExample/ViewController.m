@@ -8,8 +8,11 @@
 
 #import "ViewController.h"
 #import "Post.h"
+#import "PostViewController.h"
 
-@interface ViewController ()
+@interface ViewController () {
+    int _selectedRow;
+}
 
 @end
 
@@ -33,6 +36,20 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+    if([segue.destinationViewController isKindOfClass:[PostViewController class]]) {
+        PostViewController* postViewController = (PostViewController*) segue.destinationViewController;
+        postViewController.post = [[Post allObjects] objectAtIndex:_selectedRow];
+    }
+}
+
 /********************************************************/
 #pragma mark - TableViewDataSource
 /********************************************************/
@@ -52,7 +69,7 @@
     
     if (cell == nil) {
         
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
         
     }
     
@@ -60,6 +77,7 @@
     Post *post = [[Post allObjects] objectAtIndex:indexPath.row];
     NSLog(@"post title = %@", post.title);
     cell.textLabel.text = post.title;
+    cell.detailTextLabel.text = [post.publishDate description];
     
     return cell;
     
@@ -89,5 +107,8 @@
 /********************************************************/
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    _selectedRow = indexPath.row;
+    [self performSegueWithIdentifier:@"SeePostSegue" sender:self];
+    
 }
 @end
