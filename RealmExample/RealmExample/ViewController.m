@@ -74,7 +74,7 @@
     }
     
     // Configure the cell...
-    Post *post = [[[Post allObjects] arraySortedByProperty:@"publishDate" ascending:NO] objectAtIndex:indexPath.row];
+    Post *post = [[[Post allObjects] sortedResultsUsingProperty:@"publishDate" ascending:NO] objectAtIndex:indexPath.row];
     cell.textLabel.text = post.title;
     cell.detailTextLabel.text = [post.publishDate description];
     
